@@ -345,6 +345,7 @@ int32_t fs_opr_t::get_event(fs_event_t& event, uint32_t timeout) {
             //2）有sessionid的振铃视为外呼后的振铃
             //3）其它事件根据uuid查询
             else if (0 == strcasecmp(event.name, "CHANNEL_PROGRESS_MEDIA") ||
+                     0 == strcasecmp(event.name, "CHANNEL_ORIGINATE") ||
                      0 == strcasecmp(event.name, "CHANNEL_PROGRESS")) {
                 if (0 != event.sessionid &&
                         IvrInstanceManager::get_instance()->search_ivr_instance(event.sessionid)) {

@@ -61,9 +61,10 @@ NodeBase* node_bridgeex_t::run(base_script_t* param) {
 
     if (true == parse_expression(_caller, param->name_var_map, caller)
             && true == parse_expression(_called, param->name_var_map, called)
-            && true == parse_expression(_calltype, param->name_var_map, calltype)) {
-        IVR_TRACE("caller=%s,called=%s,bgtype=%s(usebgm:%d),bgmfile=%s", caller.c_str(), called.c_str(),
-                  _bgtype.c_str(), usebgm, bgmfile.c_str());
+            && true == parse_expression(_calltype, param->name_var_map, calltype)
+            && true == parse_expression(_callid, param->name_var_map, callid)) {
+        IVR_TRACE("caller=%s,called=%s,callid=%s,bgtype=%s(usebgm:%d),bgmfile=%s", caller.c_str(),
+                called.c_str(), callid.c_str(), _bgtype.c_str(), usebgm, bgmfile.c_str());
 
         fs_opr_t* opr = NULL;
 
